@@ -6,3 +6,16 @@
     color: white;
     margin: 5px;
 }
+.navbar-dark .navbar-nav .nav-link{
+    color: rgb(46, 45, 45)!important;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 5px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: rgb(0, 169, 113);
+}
+.dropdown-toggle::after{
+/* color: yellow; */
+}
