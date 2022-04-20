@@ -1,0 +1,29 @@
+.offer-image{
+    background-image: url('../../../images/Product/bn_img_12.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    padding: 50px;
+    width: 100%;
+}
+.text{
+    background: rgb(254, 146, 146);
+    border-radius: 25px;
+    padding: 5px 10px;
+    font-size: 15px;
+    color: white;
+}
+.offer-title{
+    font-size: 35px;
+    font-weight: bold;
+}
+.offer-percent{
+    font-size: 35px;
+}
+.extra{
+    background-image: url('../../../images/Product/bn_img_13.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,39 @@
+.line{display:block;margin-bottom: 40px;}
+.line h2{font-size:25px; text-align:center; border-bottom:10px solid rgb(202, 202, 202); position:relative; }
+.line h2 span { background-color: white; position: relative; top: 15px; padding: 0 10px;}
+.rating{
+    color: rgb(219, 219, 54);
+}
+.product-name{
+      font-size: 22px;
+      font-weight: bold;
+      font-family: cursive;
+      margin-top: 5px;
+} 
+.product-price{
+    padding: 10px 0px;
+    font-size: 22px;
+    color: rgb(21, 255, 0);
+    font-weight: bold;
+}
+.p-details a{
+    color: rgb(92, 90, 90);
+    text-decoration: none;
+}
+.percentage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(142, 142, 142);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.condtion{
+    font-size: 15px;
+    font-weight: bold;
+}
+.product-condition h4{
+    font-size: 15px;
+    color: white;
+}
