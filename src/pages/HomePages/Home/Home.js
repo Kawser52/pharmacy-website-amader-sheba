@@ -1,5 +1,6 @@
 import React from 'react';
 import Offer from '../Offer/Offer';
+import ProductFetch from '../ProductFetch/ProductFetch';
 import Products from '../Products/Products';
 import ProductSlider from '../ProductSlider/ProductSlider';
 import Service from '../Services/Service';
@@ -18,7 +19,7 @@ const Home = () => {
                 </span>
                 </div>
             </div>
-            <Products></Products>
+            <ProductFetch></ProductFetch>
             <div className="container">
                 <div className="row">
                 <span class="line">
@@ -26,7 +27,7 @@ const Home = () => {
                 </span>
                 </div>
             </div>
-            <Products></Products>
+            <ProductFetch></ProductFetch>
             <div className="container">
                 <div className="row">
                 <span class="line">
@@ -35,6 +36,7 @@ const Home = () => {
                 </div>
             </div>
             <Offer></Offer>
+           
         </div>
     );
 };
