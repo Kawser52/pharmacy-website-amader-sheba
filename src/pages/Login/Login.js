@@ -5,7 +5,7 @@ import useAuth from '../hooks/useAuth';
 import { Button } from 'react-bootstrap';
 
 const Login = () => {
-    const {signInUsingGoogle} = useAuth();
+    const {signInUsingGoogle, handleSignUp, handleEmail, handlePassword, error, toggleLogin} = useAuth();
     return (
         <div className="container py-5 h-100">
             <div className="row">
@@ -13,25 +13,25 @@ const Login = () => {
                     <img src={login} alt="" className='img-fluid' width={400} />
                 </div>
                 <div className="col-md-4">
-                    <h2>Please Login</h2>
-                <form>
+                <form onSubmit={handleSignUp}>
+                <h2 className='text-center text-suecess'>Please Register</h2>
                     <div className="form-group">
                         <label>Email</label>
-                        <input type="email" className="form-control" placeholder="Enter email" />
+                        <input type="email" name='email' onBlur={handleEmail} className="form-control" placeholder="Enter email"  required/>
                     </div>
                     <div className="form-group">
                         <label>Password</label>
-                        <input type="password" className="form-control" placeholder="Enter password" />
+                        <input type="password" name='password' onBlur={handlePassword} className="form-control" placeholder="Enter password" required/>
                     </div>
 
                     <div className="form-group">
                         <div className="custom-control custom-checkbox">
-                            <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                            <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                            <input type="checkbox" onChange={toggleLogin} className="custom-control-input" id="customCheck1" />
+                            <label className="custom-control-label" htmlFor="customCheck1">Already Registerd</label>
                         </div>
                     </div>
-
-                    <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                    <p className='text-danger'> {error}</p>
+                    <button type="submit" className="btn btn-success text-center me-auto mt-2">Register</button>
                     <p className="forgot-password text-right">
                         Forgot <a href="#">password?</a>
                     </p>
