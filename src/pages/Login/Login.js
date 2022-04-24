@@ -1,54 +1,46 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import './Login.css'
+import login from '../../../src/images/login.png'
+import useAuth from '../hooks/useAuth';
+import { Button } from 'react-bootstrap';
 
 const Login = () => {
+    const {signInUsingGoogle} = useAuth();
     return (
-        <div className="container my-5">
-                <div className="d-flex justify-content-center h-100">
-                    <div className="card">
-                        <div className="card-header">
-                            <h3>Sign In</h3>
-                            <div className="d-flex justify-content-end social_icon">
-                                <span><i className="fab fa-facebook-square"></i><FontAwesomeIcon icon={'facebook-f'}></FontAwesomeIcon></span>
-                                <span><i className="fab fa-google-plus-square"></i></span>
-                            <span><i className="fab fa-twitter-square"></i></span>
+        <div className="container py-5 h-100">
+            <div className="row">
+                <div className="col-md-8">
+                    <img src={login} alt="" className='img-fluid' width={400} />
+                </div>
+                <div className="col-md-4">
+                    <h2>Please Login</h2>
+                <form>
+                    <div className="form-group">
+                        <label>Email</label>
+                        <input type="email" className="form-control" placeholder="Enter email" />
+                    </div>
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input type="password" className="form-control" placeholder="Enter password" />
+                    </div>
+
+                    <div className="form-group">
+                        <div className="custom-control custom-checkbox">
+                            <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                            <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
                         </div>
                     </div>
-                    <div className="card-body">
-                        <form>
-                            <div className="input-group form-group">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text"><i className="fas fa-user"></i></span>
-                                </div>
-                                <input type="text" className="form-control" placeholder="username"/>
-                                
-                            </div>
-                            <div className="input-group form-group">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text"><i className="fas fa-key"></i></span>
-                                </div>
-                                <input type="password" className="form-control" placeholder="password"/>
-                            </div>
-                                <div className="row align-items-center remember">
-                                <input type="checkbox"/>Remember Me
-                            </div>
-                            <div className="form-group">
-                                <input type="submit" value="Login" className="btn float-right login_btn"/>
-                            </div>
-                        </form>
-                    </div>
-                    <div className="card-footer">
-                        <div className="d-flex justify-content-center links">
-                            Don't have an account?<a href="#">Sign Up</a>
-                        </div>
-                        <div className="d-flex justify-content-center">
-                            <a href="#">Forgot your password?</a>
-                        </div>
-                    </div>
+
+                    <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                    <p className="forgot-password text-right">
+                        Forgot <a href="#">password?</a>
+                    </p>
+                    </form>
+                   <Button variant='danger' onClick={signInUsingGoogle}>Google Sign In</Button>
                 </div>
             </div>
-</div>
+        </div>
+
     );
 };
 

@@ -1,11 +1,14 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './Header.css';
 import logo from '../../../images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
+    const {user, logOut} = useAuth();
     return (
         <div>
             <div className="top-header">
@@ -19,7 +22,7 @@ const Header = () => {
                     <Nav className="me-auto">
                     </Nav>
                     <Nav>
-                    <Nav.Link href="/home">Home</Nav.Link>
+                    <Nav.Link as={Link} to="/">Home</Nav.Link>
                     <Nav.Link href="#pricing">About Us</Nav.Link>
                     <NavDropdown title="Category" id="collasible-nav-dropdown">
                         <NavDropdown.Item href="/login">Login</NavDropdown.Item>
@@ -31,8 +34,15 @@ const Header = () => {
                     <Nav.Link href="#pricing">Contact us</Nav.Link>
                     <Nav.Link href="#pricing">Service</Nav.Link>
                     
-                    <NavDropdown title="Login/Register" id="collasible-nav-dropdown" className='ms-5'>
-                        <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                    <NavDropdown title={user.email?
+                    user.displayName:
+                    <span>Login/Register</span>
+                    } id="collasible-nav-dropdown" className='ms-5'>
+                        {
+                            user.email? 
+                            <Button variant='light' bg='transparent' onClick={logOut}>Logout</Button>:
+                            <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                        }
                         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                         <NavDropdown.Divider />
