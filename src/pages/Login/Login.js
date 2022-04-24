@@ -3,9 +3,10 @@ import './Login.css'
 import login from '../../../src/images/login.png'
 import useAuth from '../hooks/useAuth';
 import { Button } from 'react-bootstrap';
+import userEvent from '@testing-library/user-event';
 
 const Login = () => {
-    const {signInUsingGoogle, handleSignUp, handleEmail, handlePassword, error, toggleLogin} = useAuth();
+    const {signInUsingGoogle, handleSignUp, handleEmail, handlePassword, error, toggleLogin, isLoggedIn, user} = useAuth();
     return (
         <div className="container py-5 h-100">
             <div className="row">
@@ -14,7 +15,10 @@ const Login = () => {
                 </div>
                 <div className="col-md-4">
                 <form onSubmit={handleSignUp}>
-                <h2 className='text-center text-suecess'>Please Register</h2>
+                <h2 className='text-center text-suecess'>Please {isLoggedIn? 'Login' : 'Register'}</h2>
+                   {
+                       user.email? <p className='text-danger text-center'>Login Succesful</p>: ''
+                   }
                     <div className="form-group">
                         <label>Email</label>
                         <input type="email" name='email' onBlur={handleEmail} className="form-control" placeholder="Enter email"  required/>
@@ -31,7 +35,7 @@ const Login = () => {
                         </div>
                     </div>
                     <p className='text-danger'> {error}</p>
-                    <button type="submit" className="btn btn-success text-center me-auto mt-2">Register</button>
+                    <button type="submit" className="btn btn-success text-center me-auto mt-2">{isLoggedIn? 'Login' : 'Register'}</button>
                     <p className="forgot-password text-right">
                         Forgot <a href="#">password?</a>
                     </p>
