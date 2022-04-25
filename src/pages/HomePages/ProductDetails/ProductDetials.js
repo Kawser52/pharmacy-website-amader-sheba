@@ -5,7 +5,9 @@ const ProductDetials = () => {
     const {productID} = useParams();
     return (
         <div className='container'>
-           <h1 className='text-center'>This is Detials page. {productID}</h1>
+           <div className="row my-5">
+               <h3>Product Details Page. {productID}</h3>
+           </div>
         </div>
     );
 };

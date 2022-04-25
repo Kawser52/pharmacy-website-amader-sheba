@@ -10,6 +10,8 @@ import AuthProvider from './context/AuthProvider';
 import ProductDetails from './pages/HomePages/ProductDetails/ProductDetials'
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute'
 import Contact from './pages/Contact/Contact';
+import NotFound from './pages/NotFound/NotFound';
+import About from './pages/About/About';
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
               <ProductDetails></ProductDetails>
             </PrivateRoute>
             }></Route>
+            <Route path='/about' element={<About></About>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
+            <Route exact path="*" element ={<NotFound></NotFound>}></Route>
           </Routes>
           <Footer></Footer>
         </BrowserRouter>
