@@ -23,16 +23,14 @@ const Header = () => {
                     </Nav>
                     <Nav>
                     <Nav.Link as={Link} to="/">Home</Nav.Link>
-                    <Nav.Link href="#pricing">About Us</Nav.Link>
+                    <Nav.Link as={Link} to="/aboutus">About Us</Nav.Link>
                     <NavDropdown title="Category" id="collasible-nav-dropdown">
-                        <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/login">Cold</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to='/Product'>Fever</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/Product">Vitamin</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="#pricing">Contact us</Nav.Link>
-                    <Nav.Link href="#pricing">Service</Nav.Link>
+                    <Nav.Link as= {Link} to="/Contact">Contact us</Nav.Link>
+                    <Nav.Link as={Link} to="/Service">Service</Nav.Link>
                     
                     <NavDropdown title={user.email?
                     user.displayName:
@@ -43,10 +41,9 @@ const Header = () => {
                             <Button variant='light' bg='transparent' onClick={logOut}>Logout</Button>:
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>
                         }
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                        <NavDropdown.Item href="/Profile">Profile</NavDropdown.Item>
+                        <NavDropdown.Item href="/Dashboard">Dashboard</NavDropdown.Item>
+                
                     </NavDropdown>
                     <Nav.Link href="#pricing"><FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></Nav.Link>
                     </Nav>

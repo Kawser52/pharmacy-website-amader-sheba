@@ -9,6 +9,7 @@ import Login from './pages/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import ProductDetails from './pages/HomePages/ProductDetails/ProductDetials'
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute'
+import Contact from './pages/Contact/Contact';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home></Home>}></Route>
             <Route path='home' element={<Home></Home>}></Route>
+            <Route path='contact' element={<Contact></Contact>}></Route>
             <Route path='productdetails/:productID' element={
             <PrivateRoute>
               <ProductDetails></ProductDetails>

@@ -6,3 +6,7 @@
     align-items: center;
     height: 100%;
 }
+.carousel-caption h3{
+    font-size: 70px;
+    font-weight: Bold;
+}
